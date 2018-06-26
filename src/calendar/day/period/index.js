@@ -144,6 +144,12 @@ class Day extends Component {
       if (flags.rightFillerStyle) {
         rightFillerStyle.backgroundColor = flags.rightFillerStyle;
       }
+      if (this.props.state == 'today') {
+        containerStyle.push({
+          borderRadius: 17,
+          backgroundColor: this.theme.todayBackgroundColor,
+        });
+      }
 
       if (flags.startingDay && !flags.endingDay) {
         leftFillerStyle = {
@@ -197,7 +203,12 @@ class Day extends Component {
         <View style={this.style.wrapper}>
           {fillers}
           <View style={containerStyle}>
-            <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
+            {!this.props.marking.styledComponent &&
+              <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
+            }
+            {!!this.props.marking.styledComponent &&
+              this.props.marking.styledComponent
+            }
           </View>
         </View>
       </TouchableWithoutFeedback>

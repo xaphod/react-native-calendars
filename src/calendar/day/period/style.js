@@ -39,14 +39,13 @@ export default function styleConstructor(theme={}) {
       marginTop: 7,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
-      fontWeight: '300',
+      fontWeight: '600',
       color: appStyle.dayTextColor || '#2d4150',
       backgroundColor: 'rgba(255, 255, 255, 0)'
     },
     todayText: {
-      fontWeight: '500',
+      fontWeight: '600',
       color: theme.todayTextColor || appStyle.dayTextColor,
-      //color: appStyle.textLinkColor
     },
     disabledText: {
       color: appStyle.textDisabledColor
