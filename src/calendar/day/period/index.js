@@ -144,12 +144,6 @@ class Day extends Component {
       if (flags.rightFillerStyle) {
         rightFillerStyle.backgroundColor = flags.rightFillerStyle;
       }
-      if (this.props.state == 'today') {
-        containerStyle.push({
-          borderRadius: 17,
-          backgroundColor: this.theme.todayBackgroundColor,
-        });
-      }
 
       if (flags.startingDay && !flags.endingDay) {
         leftFillerStyle = {
@@ -185,6 +179,13 @@ class Day extends Component {
         };
         containerStyle.push({
           backgroundColor: flags.endingDay.color
+        });
+      }
+
+      if (this.props.state == 'today') {
+        containerStyle.push({
+          borderRadius: 17,
+          backgroundColor: this.theme.todayBackgroundColor,
         });
       }
 
